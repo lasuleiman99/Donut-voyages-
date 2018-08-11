@@ -9,8 +9,8 @@ var airtable_list_url = 'https://api.airtable.com/v0/appTHQ46vsqL0aC7y/Table%201
         <div class="card-body">
           <h4><a href="donutlist.html?id=${id}">${location}</a></h4>
           <div class="d-flex justify-content-between align-items-center">
-            <small class="text-muted">${location}</small>
-            <h6><a href="${links}">other shops</a></h6>
+          <h6><a href="donutlist.html?id=${id}">${store}</a></h6>
+            <h6><a href="${shopweb}"> shop website</a></h6>
           </div>
         </div>
       </div>
@@ -57,9 +57,15 @@ var airtable_list_url = 'https://api.airtable.com/v0/appTHQ46vsqL0aC7y/Table%201
         <img class="card-img-top" src="${pic}">
         <div class="card-body">
           <h2>${store}</h2>
+          <p><u> State </u></p>
           <p class="card-text">${location}</p>
+          <p><u> city </u></p>
           <p class="card-text">${city}</p>
+          <p><u> Address </u></p>
           <p class="card-text">${address}</p>
+          <p><u> Shop website</u></p>
+          ${shopweb ? `<a href="${shopweb}">${shopweb}</a>`: ``}
+          <p><u> links to  find other great donut shops in the state </u></p>
           ${links ? `<a href="${links}">${links}</a>`: ``}
           <hr />
         </div>
@@ -80,12 +86,11 @@ var airtable_list_url = 'https://api.airtable.com/v0/appTHQ46vsqL0aC7y/Table%201
         // console.log(val)
         var id = record.id;
         var fields = record.fields;
-        var name = fields["location"];
-  
+        var location = fields["location"];
         var pic = fields["pic"] ? fields["pic"][0].url : '';
         var city = fields["city"];
         var store = fields["store"];
-        var address = fields["Address"];
+        var address = fields["address"];
         var links = fields["links"];
         var shopweb = fields["shopweb"];
         var itemHTML = detailView(id, location,city,address,store,pic,links,shopweb);
