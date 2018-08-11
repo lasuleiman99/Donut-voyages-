@@ -10,7 +10,7 @@ var airtable_list_url = 'https://api.airtable.com/v0/appTHQ46vsqL0aC7y/Table%201
           <h4><a href="donutlist.html?id=${id}">${location}</a></h4>
           <div class="d-flex justify-content-between align-items-center">
           <h6><a href="donutlist.html?id=${id}">${store}</a></h6>
-            <h6><a href="${shopweb}"> shop website</a></h6>
+            <h6><a href="${shopweb}">   shop website</a></h6>
           </div>
         </div>
       </div>
